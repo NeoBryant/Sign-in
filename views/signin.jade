@@ -1,0 +1,26 @@
+extends layout
+
+block content
+	h1 用户登录
+	form#signup(method='post')
+		if error
+			div.error!= error
+		div.field
+			label(for='username') 用户名:
+			input(id='username' name='username' value placeholder="  请输入用户名")
+			br
+			p.error
+
+		div.field
+			label(for='password') 密码:
+			input(id='password' name='password' type='password' value placeholder="  请输入密码")
+			br
+			p.error
+
+		div.button
+			input.button.reset(type="reset" value="清除")
+			input.button.submit(type="submit" value="登录")
+			//a(href="http://127.0.0.1:8000/regist") 注册
+			a(href="http://127.0.0.1:8000/regist")
+				input.button(type="button" value="注册")
+			
